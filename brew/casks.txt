@@ -1,0 +1,6 @@
+iterm2
+visual-studio-code
+spotify
+postman
+muzzle
+flux

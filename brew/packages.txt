@@ -1,0 +1,8 @@
+fzf
+git
+neovim
+tree
+watch
+wget
+zsh
+zplug

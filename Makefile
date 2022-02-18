@@ -10,3 +10,9 @@ symlink_zsh: ## Symlink nvim
 
 unlink_zsh:
 	find ${HOME} -type lf -maxdepth 1 -name "*zsh*" -exec unlink {} \;
+
+symlink_gitconf: ## Symlink gitconfig
+	ln -s $(CURDIR)/config/git/gitconfig ~/.zshrc
+
+unlink_gitconf:
+	find ${HOME} -type lf -maxdepth 1 -name "*gitconfig*" -exec unlink {} \;

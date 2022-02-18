@@ -5,6 +5,7 @@ mappings = {
     t = {
       name = "Telescope", -- optional group name
       f = { "<cmd>Telescope find_files<cr>", "Search File" }, -- create a binding with label
+      g = { "<cmd>Telescope live_grep<cr>", "Live Grep" }, -- create a binding with label
     },
     n = {
       name = "NvimTree", -- optional group name

@@ -4,3 +4,5 @@ spotify
 postman
 muzzle
 flux
+font-meslo-lg-nerd-font
+font-hack-nerd-font

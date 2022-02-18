@@ -44,6 +44,26 @@ return require('packer').startup(function(use)
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'christianrondeau/vim-base64'
 
+  use {
+    'hrsh7th/nvim-cmp',
+    requires = {
+      'neovim/nvim-lspconfig',
+      'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-path',
+      'hrsh7th/cmp-cmdline',
+      'L3MON4D3/LuaSnip',
+      'saadparwaiz1/cmp_luasnip',
+    }
+  }
+
+  use {
+    'williamboman/nvim-lsp-installer',
+    requires = {
+      'neovim/nvim-lspconfig',
+    }
+  }
+
   if packer_bootstrap then
     require('packer').sync()
   end

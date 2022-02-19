@@ -3,8 +3,10 @@
 [user]
 	name = Rushil Basappa
 	email = rushil.oucse37@gmail.com
+[credential]
+	helper = cache --timeout 3600
 [core]
-  editor = /usr/local/bin/vim
+  editor = nvim
 [color "branch"]
   local = yellow
 [color "diff"]

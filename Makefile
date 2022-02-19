@@ -1,18 +1,16 @@
-.PHONY: brew
-brew: ## Installs commonly used Homebrew packages and casks
-	-@$(CURDIR)/brew/brew.sh
+HOMEFILES:= $(shell find config/home -type f -exec basename {} \;)
+DOTFILES := $(addprefix $(HOME)/, $(HOMEFILES))
 
-symlink_nvim: ## Symlink nvim
-	ln -s $(CURDIR)/config/nvim ~/.config
+all: link_git
 
-symlink_zsh: ## Symlink nvim
-	ln -s $(CURDIR)/config/zsh/zshrc ~/.zshrc
+link_git: $(foreach f, $(filter %gitconfig, $(DOTFILES)), $(f))
 
-unlink_zsh:
-	find ${HOME} -type lf -maxdepth 1 -name "*zsh*" -exec unlink {} \;
+unlink_git:
+	@for f in $(filter %gitconfig, $(DOTFILES)); do \
+		if [ -h $$f ]; then \
+			rm -i $$f; \
+		fi; \
+	done
 
-symlink_gitconf: ## Symlink gitconfig
-	ln -s $(CURDIR)/config/git/gitconfig ~/.zshrc
-
-unlink_gitconf:
-	find ${HOME} -type lf -maxdepth 1 -name "*gitconfig*" -exec unlink {} \;
+${DOTFILES}:
+	@ln -sv "$(PWD)/config/home/$(notdir $@)" $@

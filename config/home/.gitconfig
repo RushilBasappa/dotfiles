@@ -4,7 +4,7 @@
 	name = Rushil Basappa
 	email = rushil.oucse37@gmail.com
 [credential]
-	helper = store
+	helper = cache --timeout 3600
 [core]
   editor = nvim
 [color "branch"]

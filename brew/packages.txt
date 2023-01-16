@@ -1,9 +1,15 @@
+cmake
 fzf
 git
+luarocks
+mackup
 neovim
+nvm
+pyenv
+ripgrep
+starship
 tree
 watch
 wget
-zsh
 zplug
-ripgrep
+zsh-completions

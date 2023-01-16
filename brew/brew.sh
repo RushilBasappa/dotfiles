@@ -21,9 +21,11 @@ install_homebrew() {
                          Installing Homebrew
 =======================================================================
 "
-  if [[ ! -d "/usr/local/Homebrew" ]]; then
+  which -s brew
+  if [[ $? != 0 ]] ; then
     echo "==> Installing..."
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    install_homebrew_taps
   else
     echo "==> Already installed."
   fi
@@ -99,7 +101,7 @@ Installed Homebrew Packages:
   echo -e "
 Installed Homebrew Casks:
 -------------------------"
-  brew list --cask
+  brew list --cask | xargs -n1
 }
 
 verify_pre_install() {
@@ -114,7 +116,6 @@ main() {
   print_banner
   verify_pre_install
   install_homebrew
-  install_homebrew_taps
   keep_brew_up_to_date
   install_packages
   install_casks

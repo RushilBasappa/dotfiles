@@ -1,3 +1,4 @@
+1password
 iterm2
 visual-studio-code
 spotify

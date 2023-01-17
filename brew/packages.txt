@@ -8,8 +8,10 @@ nvm
 pyenv
 ripgrep
 starship
+tmux
 tree
 watch
 wget
 zplug
 zsh-completions
+thefuck

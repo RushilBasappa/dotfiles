@@ -19,35 +19,53 @@ packer.init {
 
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
+
+  -- Dependencies
+  use { 'nvim-lua/plenary.nvim' } -- diffview, gitsigns, telescope
+  use { 'kyazdani42/nvim-web-devicons' } -- nvim-tree
+  use { 'neovim/nvim-lspconfig' } -- nvim-lsp-installer, nvim-cmp
+
+  -- ColorSchemes
   use 'EdenEast/nightfox.nvim'
+
+  -- Nvim Tree
   use {
     'kyazdani42/nvim-tree.lua',
-    requires = { 'kyazdani42/nvim-web-devicons' },
-    config = function() require'nvim-tree'.setup {} end
+    config = function() require('nvim-tree').setup {} end
   }
+
+  -- Which Key
   use "folke/which-key.nvim"
+
+  -- Telescope
   use {
     'nvim-telescope/telescope.nvim',
-    requires = { 'nvim-lua/plenary.nvim' },
     config = function() require('telescope').setup {} end
   }
+
+  -- Comments
   use {
     'numToStr/Comment.nvim',
     config = function() require('Comment').setup {} end
   }
+
+  -- GitSigns
   use {
     'lewis6991/gitsigns.nvim',
-    requires = { 'nvim-lua/plenary.nvim' },
     config = function() require('gitsigns').setup {} end
   }
-  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+  use { 'sindrets/diffview.nvim' }
+
+  -- Treesitter
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+
+  -- Base64 converter
   use 'christianrondeau/vim-base64'
 
+  -- LSP & CMP
   use {
     'hrsh7th/nvim-cmp',
     requires = {
-      'neovim/nvim-lspconfig',
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-path',
@@ -57,12 +75,15 @@ return require('packer').startup(function(use)
     }
   }
 
-  use {
-    'williamboman/nvim-lsp-installer',
-    requires = {
-      'neovim/nvim-lspconfig',
-    }
-  }
+  -- LSP installer
+  use { 'williamboman/nvim-lsp-installer' }
+
+  -- Illuminate - Highlight similar words
+  use { "RRethy/vim-illuminate" }
+
+  -- auto close brackets, etc.
+  use { "windwp/nvim-autopairs" }
+
 
   if packer_bootstrap then
     require('packer').sync()

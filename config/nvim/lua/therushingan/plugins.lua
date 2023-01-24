@@ -22,7 +22,7 @@ return require('packer').startup(function(use)
 
   -- Dependencies
   use { 'nvim-lua/plenary.nvim' } -- diffview, gitsigns, telescope
-  use { 'kyazdani42/nvim-web-devicons' } -- nvim-tree
+  use { 'kyazdani42/nvim-web-devicons' } -- nvim-tree, bufferline
   use { 'neovim/nvim-lspconfig' } -- nvim-lsp-installer, nvim-cmp
 
   -- ColorSchemes
@@ -82,8 +82,15 @@ return require('packer').startup(function(use)
   use { "RRethy/vim-illuminate" }
 
   -- auto close brackets, etc.
-  use { "windwp/nvim-autopairs" }
+  use {
+    "windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup { map_cr = true } end
+  }
 
+  use {
+    "akinsho/bufferline.nvim",
+    config = function() require("bufferline").setup {} end
+  }
 
   if packer_bootstrap then
     require('packer').sync()

@@ -27,6 +27,7 @@ source $ZPLUG_HOME/init.zsh
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zdharma-continuum/fast-syntax-highlighting", defer:2
 zplug "plugins/copydir", from:oh-my-zsh
+zplug "plugins/docker", from:oh-my-zsh
 zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/history", from:oh-my-zsh
 zplug "plugins/jsontools", from:oh-my-zsh
@@ -68,6 +69,7 @@ export NVM_DIR="$HOME/.nvm"
 # Gcloud config
 source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 
 # fuck config
 eval $(thefuck --alias)

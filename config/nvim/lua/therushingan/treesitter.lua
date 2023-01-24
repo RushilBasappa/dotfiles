@@ -1,7 +1,21 @@
 require'nvim-treesitter.configs'.setup {
   ensure_installed = {
+    "bash",
+    "c",
+    "css",
+    "dockerfile",
+    "go",
+    "html",
+    "javascript",
     "json",
-    "python"
+    "lua",
+    "markdown",
+    "python",
+    "scss",
+    "terraform",
+    "typescript",
+    "vim",
+    "yaml",
   },
   sync_install = false,
 
@@ -12,6 +26,11 @@ require'nvim-treesitter.configs'.setup {
     enable = true,
     disable = {},
 
-    additional_vim_regex_highlighting = false,
+    additional_vim_regex_highlighting = true,
   },
+
+  indent = {
+    enable = true,
+    disable = {}
+  }
 }

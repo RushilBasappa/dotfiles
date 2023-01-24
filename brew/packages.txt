@@ -1,4 +1,6 @@
 cmake
+docker
+docker-compose
 fzf
 git
 luarocks
@@ -8,10 +10,10 @@ nvm
 pyenv
 ripgrep
 starship
+thefuck
 tmux
 tree
 watch
 wget
 zplug
 zsh-completions
-thefuck

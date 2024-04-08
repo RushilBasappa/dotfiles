@@ -4,7 +4,6 @@ font-hack-nerd-font
 font-meslo-lg-nerd-font
 google-cloud-sdk
 iterm2
-muzzle
 postman
 spotify
 visual-studio-code

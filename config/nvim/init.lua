@@ -1,11 +1,6 @@
 require('rushinsneaky.core')
 require('rushinsneaky.lazy')
 
-
-
-
-
-
 -- require('therushingan.plugins')
 -- require('therushingan.options')
 -- require('therushingan.colorscheme')

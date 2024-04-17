@@ -17,7 +17,7 @@ link_git: $(foreach f, $(filter %gitconfig, $(DOTFILES)), $(f))
 link_zsh: $(foreach f, $(filter %zshrc, $(DOTFILES)), $(f))
 
 link_nvim: 
-	ln -s $(CURDIR)/config/nvim ~/.config
+	ln -s $(CURDIR)/config/nvim ~/.config/
 
 unlink_git:
 	@for f in $(filter %gitconfig, $(DOTFILES)); do \
